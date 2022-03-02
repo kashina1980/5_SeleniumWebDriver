@@ -12,20 +12,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class  HerokuTest {
+public class HerokuTest {
     private WebDriver driver;
 
     @BeforeEach
-    public void setUp(){
+    public void setUp() {
         String browser = System.getProperty("browser");
 
-        if (browser.equals("chrome")){
+        if (browser.equals("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
-        } else if (browser.equals("firefox")){
+        } else if (browser.equals("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
-        } else if (browser.equals("edge")){
+        } else if (browser.equals("edge")) {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
         }
@@ -38,17 +38,17 @@ public class  HerokuTest {
 
     @Test
     public void checkCurrentUrl() throws InterruptedException {
-        Assertions.assertEquals("https://the-internet.herokuapp.com/",driver.getCurrentUrl());
+        Assertions.assertEquals("https://the-internet.herokuapp.com/", driver.getCurrentUrl());
         Thread.sleep(2000);
     }
 
     @Test
-    public void checkTitle(){
+    public void checkTitle() {
         Assertions.assertEquals("The Internet", driver.getTitle());
     }
 
     @Test
-    public void  authenticationTest() throws InterruptedException {
+    public void authenticationTest() throws InterruptedException {
         String username = "tomsmith";
         String password = "SuperSecretPassword!";
         driver.findElement(By.xpath("//a[text()='Form Authentication']")).click();
@@ -67,7 +67,7 @@ public class  HerokuTest {
     }
 
     @AfterEach
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }

@@ -36,7 +36,6 @@ public class ToolsQATest {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-
     @Test
     public void АuthenticationFormsTest() throws InterruptedException {
 
@@ -127,7 +126,6 @@ public class ToolsQATest {
 
         Thread.sleep(5000);
     }
-
     @AfterEach
     public void tearDown() {
         driver.quit();

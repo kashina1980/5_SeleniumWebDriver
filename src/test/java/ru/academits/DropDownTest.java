@@ -19,16 +19,16 @@ public class DropDownTest {
     private WebDriver driver;
 
     @BeforeEach
-    public void setUp(){
+    public void setUp() {
         String browser = System.getProperty("browser");
 
-        if (browser.equals("chrome")){
+        if (browser.equals("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
-        } else if (browser.equals("firefox")){
+        } else if (browser.equals("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
-        } else if (browser.equals("edge")){
+        } else if (browser.equals("edge")) {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
         }
@@ -39,7 +39,7 @@ public class DropDownTest {
     }
 
     @Test
-    public void  DropDownTestSelect() throws InterruptedException {
+    public void DropDownTestSelect() throws InterruptedException {
         driver.findElement(By.xpath("//a[text()='Dropdown']")).click();
 
         WebElement elementDropdown = driver.findElement(By.id("dropdown"));
@@ -52,7 +52,7 @@ public class DropDownTest {
     }
 
     @Test
-    public void  DropDownTestClick() throws InterruptedException {
+    public void DropDownTestClick() throws InterruptedException {
         driver.findElement(By.xpath("//a[text()='Dropdown']")).click();
         driver.findElement(By.xpath("//*[@id='dropdown']/option[text()='Option 2']")).click();
 
@@ -64,8 +64,9 @@ public class DropDownTest {
         Thread.sleep(3000);
 
     }
+
     @AfterEach
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }

@@ -13,13 +13,13 @@ public class SeleniumWebDriverManagerTest{
         WebDriver driver = null;
         String browser = System.getProperty("browser");
 
-        if (browser.equals("chrome")){
+        if (browser.equals("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
-        } else if (browser.equals("firefox")){
+        } else if (browser.equals("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
-        } else if (browser.equals("edge")){
+        } else if (browser.equals("edge")) {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
         }

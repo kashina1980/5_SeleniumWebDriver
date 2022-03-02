@@ -9,7 +9,7 @@ public class SeleniumLocalDriverTests {
 
     @Test
     public void openPageInChromeTest() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://the-internet.herokuapp.com/");
@@ -17,9 +17,10 @@ public class SeleniumLocalDriverTests {
         Thread.sleep(2000);
         driver.quit();
     }
+
     @Test
     public void openPageInFirefoxTest() throws InterruptedException {
-        System.setProperty("webdriver.gecko.driver","C:\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
 
         driver.get("https://the-internet.herokuapp.com/");
@@ -27,16 +28,17 @@ public class SeleniumLocalDriverTests {
         Thread.sleep(2000);
         driver.quit();
     }
+
     @Test
     public void openPageWithParameterTest() throws InterruptedException {
         WebDriver driver = null;
 
         String browser = System.getProperty("browser");
-        if (browser.equals("chrome")){
-            System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
-           driver = new ChromeDriver();
-        } else if (browser.equals("firefox")){
-            System.setProperty("webdriver.gecko.driver","C:\\geckodriver.exe");
+        if (browser.equals("chrome")) {
+            System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+            driver = new ChromeDriver();
+        } else if (browser.equals("firefox")) {
+            System.setProperty("webdriver.gecko.driver", "C:\\geckodriver.exe");
             driver = new FirefoxDriver();
         }
 
